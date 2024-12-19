@@ -6,7 +6,7 @@
 /*   By: anoteris <noterisarthur42@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/05 04:41:45 by anoteris          #+#    #+#             */
-/*   Updated: 2024/12/09 23:49:19 by anoteris         ###   ########.fr       */
+/*   Updated: 2024/12/19 12:50:37 by anoteris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,11 @@ int	get_player_y(char **map)
 
 void	flood_fill(char **map, int x, int y)
 {
+	if (map[y][x] == 'E')
+	{
+		map[y][x] = 'f';
+		return ;
+	}
 	if (map[y][x] == '1' || map[y][x] == 'f')
 		return ;
 	map[y][x] = 'f';
